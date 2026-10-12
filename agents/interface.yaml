@@ -1,0 +1,18 @@
+interface:
+  display_name: "iOS UI/UX 审查师"
+  short_description: "读取 Xcode 项目，检查 UI、交互和可用性，给出有证据的修改建议"
+  default_prompt: "使用 $ios-ui-ux-reviewer 审查当前项目，给出证据和修改建议。先不改代码。"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets: [openai]
+  activation:
+    mode: "manual"
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "official-public-documents-only"
+  degradation:
+    openai: "Without simulator tools, perform source-only review and disclose runtime gaps."

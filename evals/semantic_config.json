@@ -1,0 +1,12 @@
+{
+  "positive_concepts": {
+    "ios-context": {"weight": 0.5, "phrases": ["iOS", "Xcode", "SwiftUI", "UIKit"]},
+    "design-review": {"weight": 0.5, "phrases": ["UI审查", "UX审查", "交互审查", "界面审查", "Review the UI", "检查", "审查"]}
+  },
+  "negative_concepts": {
+    "build-only": {"weight": 0.8, "exclusive": true, "phrases": ["修复 SwiftUI 编译错误"]},
+    "new-screen": {"weight": 0.8, "exclusive": true, "phrases": ["实现一个新的"]},
+    "backend-only": {"weight": 0.8, "exclusive": true, "phrases": ["后端 SQL"]}
+  },
+  "fallback_positive_concepts": ["ios-context", "design-review"]
+}

@@ -1,0 +1,612 @@
+{
+  "threshold": 0.7,
+  "threshold_explanation": "Prompts at or above the threshold are treated as trigger matches. Scores are driven primarily by semantic intent coverage: packaging intent, workflow-to-skill transformation intent, reuse/distribution intent, and eval intent. Explicit exclusions such as summary-only, translation-only, one-off, document-only, or do-not-build directives apply direct penalties and can override otherwise similar wording.",
+  "false_positives": 0,
+  "false_negatives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "bucket_stats": {
+    "should_trigger": {
+      "total": 6,
+      "passed": 6,
+      "pass_rate": 1.0
+    },
+    "should_not_trigger": {
+      "total": 3,
+      "passed": 3,
+      "pass_rate": 1.0
+    },
+    "near_neighbor": {
+      "total": 4,
+      "passed": 4,
+      "pass_rate": 1.0
+    }
+  },
+  "family_stats": {
+    "source": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "english": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "interaction": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "accessibility": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "paywall": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "screenshots": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "other-platform": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "build": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "aso": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "runtime-only": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "web-review": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "implementation": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    },
+    "backend": {
+      "total": 1,
+      "passed": 1,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "pass_rate": 1.0
+    }
+  },
+  "misfires": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "读取 Xcode 工程，做一次 UI审查，给修改建议",
+        "family": "source",
+        "score": 0.987,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "UI审查",
+                "审查"
+              ],
+              "ios-context": [
+                "Xcode"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "Review the UI and UX of my existing SwiftUI app",
+        "family": "english",
+        "score": 1.0,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.7,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "Review the UI"
+              ],
+              "ios-context": [
+                "SwiftUI"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "帮我检查 iOS App 的交互问题，先不要改代码",
+        "family": "interaction",
+        "score": 0.992,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.4,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "检查"
+              ],
+              "ios-context": [
+                "iOS"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "审查 UIKit 页面的无障碍问题，只有源码也先检查",
+        "family": "accessibility",
+        "score": 0.98,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "检查",
+                "审查"
+              ],
+              "ios-context": [
+                "UIKit"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "审查 iOS 付费页，判断交互和价格展示是否误导",
+        "family": "paywall",
+        "score": 0.98,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "审查"
+              ],
+              "ios-context": [
+                "iOS"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "iOS UI审查，只看截图，不运行模拟器",
+        "family": "screenshots",
+        "score": 1.0,
+        "predicted_trigger": true,
+        "expected_trigger": true,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.5,
+          "negative_penalty": 0,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "UI审查",
+                "审查"
+              ],
+              "ios-context": [
+                "iOS"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "设计 Android 首页",
+        "family": "other-platform",
+        "score": 0.027,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "帮我修复 SwiftUI 编译错误",
+        "family": "build",
+        "score": 0.0,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "build-only"
+          ],
+          "exclusive_negative_concepts": [
+            "build-only"
+          ],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0.8,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "ios-context": [
+                "SwiftUI"
+              ]
+            },
+            "negative": {
+              "build-only": [
+                "修复 SwiftUI 编译错误"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "prompt": "优化 App Store 关键词",
+        "family": "aso",
+        "score": 0.02,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.0,
+          "support_score": 0,
+          "lexical_support": 0.25,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {},
+            "negative": {}
+          }
+        }
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "启动 iOS 模拟器并截一张图",
+        "family": "runtime-only",
+        "score": 0.487,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "ios-context": [
+                "iOS"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "审查网站的 UI 和 UX",
+        "family": "web-review",
+        "score": 0.5,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [],
+          "exclusive_negative_concepts": [],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.5,
+          "negative_penalty": 0,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "审查"
+              ]
+            },
+            "negative": {}
+          }
+        }
+      },
+      {
+        "prompt": "实现一个新的 SwiftUI 登录页面",
+        "family": "implementation",
+        "score": 0.0,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "new-screen"
+          ],
+          "exclusive_negative_concepts": [
+            "new-screen"
+          ],
+          "semantic_coverage": 0.5,
+          "support_score": 0,
+          "lexical_support": 0.333,
+          "negative_penalty": 0.8,
+          "coverage_boost": 0.0,
+          "concept_evidence": {
+            "positive": {
+              "ios-context": [
+                "SwiftUI"
+              ]
+            },
+            "negative": {
+              "new-screen": [
+                "实现一个新的"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "prompt": "检查 iOS 项目的后端 SQL 性能",
+        "family": "backend",
+        "score": 0.026,
+        "predicted_trigger": false,
+        "expected_trigger": false,
+        "passed": true,
+        "score_detail": {
+          "mode": "semantic-intent",
+          "desired_positive_concepts": [
+            "ios-context",
+            "design-review"
+          ],
+          "matched_desired_concepts": [
+            "design-review",
+            "ios-context"
+          ],
+          "extra_positive_concepts": [],
+          "matched_negative_concepts": [
+            "backend-only"
+          ],
+          "exclusive_negative_concepts": [
+            "backend-only"
+          ],
+          "semantic_coverage": 1.0,
+          "support_score": 0,
+          "lexical_support": 0.2,
+          "negative_penalty": 0.8,
+          "coverage_boost": 0.04,
+          "concept_evidence": {
+            "positive": {
+              "design-review": [
+                "检查"
+              ],
+              "ios-context": [
+                "iOS"
+              ]
+            },
+            "negative": {
+              "backend-only": [
+                "后端 SQL"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

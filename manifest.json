@@ -1,0 +1,16 @@
+{
+  "name": "ios-ui-ux-reviewer",
+  "version": "0.1.0",
+  "owner": "1085995907ljh-hash",
+  "updated_at": "2026-10-12",
+  "review_due": "2027-01-12",
+  "status": "active",
+  "release_channel": "preview",
+  "maturity_tier": "scaffold",
+  "context_budget_tier": "scaffold",
+  "review_cadence": "quarterly and after major Apple platform releases",
+  "skill_ir_source": "skill-ir.json",
+  "target_platforms": ["openai"],
+  "output_contract": "references/report-contract.md",
+  "rollback_boundary": "Restore a backed-up skill directory; do not revert app source or existing audit reports."
+}

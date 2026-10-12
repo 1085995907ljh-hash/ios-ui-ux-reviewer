@@ -1,0 +1,22 @@
+{
+  "recommended_threshold": 0.7,
+  "should_trigger": [
+    {"text": "读取 Xcode 工程，做一次 UI审查，给修改建议", "family": "source"},
+    {"text": "Review the UI and UX of my existing SwiftUI app", "family": "english"},
+    {"text": "帮我检查 iOS App 的交互问题，先不要改代码", "family": "interaction"},
+    {"text": "审查 UIKit 页面的无障碍问题，只有源码也先检查", "family": "accessibility"},
+    {"text": "审查 iOS 付费页，判断交互和价格展示是否误导", "family": "paywall"},
+    {"text": "iOS UI审查，只看截图，不运行模拟器", "family": "screenshots"}
+  ],
+  "should_not_trigger": [
+    {"text": "设计 Android 首页", "family": "other-platform"},
+    {"text": "帮我修复 SwiftUI 编译错误", "family": "build"},
+    {"text": "优化 App Store 关键词", "family": "aso"}
+  ],
+  "near_neighbor": [
+    {"text": "启动 iOS 模拟器并截一张图", "family": "runtime-only"},
+    {"text": "审查网站的 UI 和 UX", "family": "web-review"},
+    {"text": "实现一个新的 SwiftUI 登录页面", "family": "implementation"},
+    {"text": "检查 iOS 项目的后端 SQL 性能", "family": "backend"}
+  ]
+}
