@@ -13,7 +13,7 @@
 把下面整段发给你电脑上的 Codex：
 
 ```text
-请使用 skill-installer，将 GitHub 仓库 https://github.com/1085995907ljh-hash/ios-ui-ux-reviewer 安装为全局 Codex 技能。技能位于仓库根目录，名称为 ios-ui-ux-reviewer。安装器参数使用 --repo 1085995907ljh-hash/ios-ui-ux-reviewer --path . --name ios-ui-ux-reviewer。如果已经安装，先检查本地修改并备份，再更新。完成后检查 SKILL.md 和 references 目录，并告诉我如何使用。不要开始审查或修改我的 App。
+请把 https://github.com/1085995907ljh-hash/ios-ui-ux-reviewer 安装为全局 Codex 技能。用完整 git clone 将仓库克隆到 CODEX_HOME 下的 skills/ios-ui-ux-reviewer；未设置 CODEX_HOME 时使用 ~/.codex/skills/ios-ui-ux-reviewer。不要使用根目录稀疏检出，它可能漏掉 references 等子目录。如果已经安装，先检查本地修改并备份，再更新。完成后检查 SKILL.md、agents、references 和 evals 目录，并告诉我如何调用。没有仓库访问权限时说明原因。不要开始审查或修改我的 App。
 ```
 
 不需要先安装 Yao。Yao 用于制作这个技能，不是运行依赖。
@@ -117,7 +117,7 @@ git -C "${CODEX_HOME:-$HOME/.codex}/skills/ios-ui-ux-reviewer" status --short
 git -C "${CODEX_HOME:-$HOME/.codex}/skills/ios-ui-ux-reviewer" pull --ff-only
 ```
 
-有输出时，先保留本地改动。安装器下载的目录可能没有 Git 信息，此时使用安装器更新。
+有输出时，先保留本地改动。如果已有目录没有 Git 信息，让 Codex 先备份，再完整克隆本仓库。
 
 卸载时，把 `ios-ui-ux-reviewer` 文件夹移出 Codex 的 skills 目录。项目里已经生成的报告不会被删除。
 

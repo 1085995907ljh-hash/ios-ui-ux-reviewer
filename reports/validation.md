@@ -14,6 +14,7 @@ JSON 检查记录保存在本目录。manifest 将成熟度标为 scaffold，版
 
 - OpenAI 目标兼容性检查通过，包含 manifest、Skill IR、入口元数据和引用资源。
 - trust_check.py 未发现密钥；它扫描的源文件范围见 trust-check.json。没有依赖锁文件的提示适用于本包没有附带执行脚本或第三方运行依赖的情况。
-- README 提供 Codex 安装器和 Git clone 两种路径。真实 App 验证仍然缺失。
+- README 提供 Codex 代为完整克隆和手动 Git clone 两种方式。真实 App 验证仍然缺失。
+- 安装器 Git 模式使用 --path . 时，实测会遗漏子目录。不要使用这条安装路径。使用完整 git clone。
 
 尚未完成：真实 Xcode 工程试审、模拟器操作、独立模型行为评测。当前交付是可用的个人技能基线。
